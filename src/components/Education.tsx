@@ -39,7 +39,7 @@ export default function ComponentEducation() {
 						{/* Louis Vuitton */}
 						<div className="flex items-center gap-3 justify-center md:justify-start">
 							<span className="border border-accent rounded-md px-3 py-1 text-gray-600 dark:text-text/80 text-sm font-semibold bg-gray-100 dark:bg-transparent">
-								2023 – 2024
+								2022 – 2023
 							</span>
 							<span className="text-gray-800 dark:text-text font-medium text-base">
 								Conseiller Clientèle — Louis Vuitton, Nouvelle-Zélande

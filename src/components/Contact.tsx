@@ -42,7 +42,7 @@ export default function ComponentContact() {
 			</h2>
 			<p className="text-gray-700 dark:text-text/80 text-center max-w-md">
 				Envie d’échanger sur un projet, une collaboration ou simplement discuter
-				tech? N’hésite pas à me contacter!
+				tech ? N’hésite pas à me contacter !
 			</p>
 
 			{/* Formulaire */}
@@ -87,7 +87,7 @@ export default function ComponentContact() {
 				</button>
 				{sent && (
 					<div className="text-center text-green-600 dark:text-mint font-semibold mt-2">
-						Merci pour ton message! Je te répondrai vite 🚀
+						Merci pour ton message ! Je te répondrai vite 🚀
 					</div>
 				)}
 			</form>

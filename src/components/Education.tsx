@@ -1,12 +1,13 @@
+const BASE_URL = import.meta.env.BASE_URL;
 const technicalSkills = [
-	{ name: "JavaScript", img: "/icons/JavaScript.svg" },
-	{ name: "React", img: "/icons/React.svg" },
-	{ name: "Node.js", img: "/icons/Node.js.svg" },
-	{ name: "PostgreSQL", img: "/icons/PostgresSQL.svg" },
-	{ name: "Express", img: "/icons/Express.svg" },
-	{ name: "Docker", img: "/icons/Docker.svg" },
-	{ name: "TypeScript", img: "/icons/TypeScript.svg" },
-	{ name: "MongoDB", img: "/icons/MongoDB.svg" },
+	{ name: "JavaScript", img: `${BASE_URL}icons/JavaScript.svg` },
+	{ name: "React", img: `${BASE_URL}icons/React.svg` },
+	{ name: "Node.js", img: `${BASE_URL}icons/Node.js.svg` },
+	{ name: "PostgreSQL", img: `${BASE_URL}icons/PostgresSQL.svg` },
+	{ name: "Express", img: `${BASE_URL}icons/Express.svg` },
+	{ name: "Docker", img: `${BASE_URL}icons/Docker.svg` },
+	{ name: "TypeScript", img: `${BASE_URL}icons/TypeScript.svg` },
+	{ name: "MongoDB", img: `${BASE_URL}icons/MongoDB.svg` },
 ];
 
 export default function ComponentEducation() {

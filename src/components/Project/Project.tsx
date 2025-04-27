@@ -1,5 +1,5 @@
 // src/components/ComponentProject.tsx
-
+const BASE_URL = import.meta.env.BASE_URL;
 import { ComponentProjetProps } from "../Project/ProjectProps";
 import type { Project } from "../../types/types";
 
@@ -11,7 +11,7 @@ const projects: Project[] = [
 			"Ce projet a été développé pour pratiquer les API REST, l'authentification et React.",
 		stack: ["React", "API-REST"],
 		github: "https://github.com/Romain-mont/HarryPotter",
-		image: "/projets/HarryPotter.png",
+		image: `${BASE_URL}projets/HarryPotter.png`,
 		status: "in-progress",
 	},
 	{
@@ -21,7 +21,7 @@ const projects: Project[] = [
 			"Senior Love, une plateforme de rencontres en ligne combinée à des événements locaux. Ce projet s’adresse aux retraités actifs de plus de 60 ans en quête de nouvelles rencontres et de moments de partage.",
 		stack: ["Node.js", "Express", "EJS", "PostgreSQL"],
 		github: "https://github.com/Romain-mont",
-		image: "/projets/SeniorLove.png",
+		image: `${BASE_URL}projets/SeniorLove.png`,
 		status: "in-progress",
 	},
 	{
@@ -42,7 +42,7 @@ J'ai voulu pratiquer tout ce que j'ai vu au cours de ma formation, en combinant 
 			"API REST",
 		],
 		github: "https://github.com/Romain-mont/Projet-salle-de-sport",
-		image: "/projets/FitStack.png",
+		image: `${BASE_URL}projets/FitStack.png`,
 		status: "in-progress",
 	},
 ];

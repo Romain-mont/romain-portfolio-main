@@ -2,37 +2,43 @@ import { useState } from "react";
 import { Mail, Linkedin, GitHub, Phone, Send } from "react-feather";
 
 export default function ComponentContact() {
-	const [sent, setSent] = useState(false);
-	const [loading, setLoading] = useState(false);
+	const [status, setStatus] = useState<
+		"idle" | "loading" | "success" | "error"
+	>("idle");
 	const [form, setForm] = useState({ name: "", email: "", message: "" });
-	const accessKey = import.meta.env.VITE_WEB3FORMS_KEY;
+
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		setStatus("loading");
+
+		const form = e.currentTarget; // référence au formulaire
+		const formData = new FormData(form);
+		formData.append("access_key", "c792e664-a926-440b-b89b-2ccffb01d6e4");
+
+		try {
+			const response = await fetch("https://api.web3forms.com/submit", {
+				method: "POST",
+				body: formData, // PAS de headers ici !
+			});
+			const data = await response.json();
+			if (data.success) {
+				setStatus("success");
+				setForm({ name: "", email: "", message: "" });
+				form.reset();
+				setTimeout(() => setStatus("idle"), 4000);
+			} else {
+				setStatus("error");
+				console.error("Erreur Web3Forms:", data.message);
+			}
+		} catch (error) {
+			setStatus("error");
+			console.error("Erreur réseau:", error);
+		}
+	};
 	const handleChange = (
 		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
 	) => {
 		setForm({ ...form, [e.target.name]: e.target.value });
-	};
-
-	const handleSubmit = async (e: React.FormEvent) => {
-		e.preventDefault();
-		setLoading(true);
-
-		const res = await fetch("https://api.web3forms.com/submit", {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({
-				access_key: accessKey,
-				name: form.name,
-				email: form.email,
-				message: form.message,
-			}),
-		});
-
-		if (res.ok) {
-			setSent(true);
-			setForm({ name: "", email: "", message: "" });
-			setTimeout(() => setSent(false), 4000);
-		}
-		setLoading(false);
 	};
 
 	return (
@@ -45,7 +51,6 @@ export default function ComponentContact() {
 				tech ? N’hésite pas à me contacter !
 			</p>
 
-			{/* Formulaire */}
 			<form
 				onSubmit={handleSubmit}
 				className="w-full max-w-md bg-gray-100 dark:bg-card rounded-lg shadow p-6 flex flex-col gap-4"
@@ -77,17 +82,31 @@ export default function ComponentContact() {
 					rows={4}
 					className="px-4 py-2 rounded border border-gray-300 dark:border-card bg-white dark:bg-primary text-gray-900 dark:text-text focus:outline-none focus:ring-2 focus:ring-accent transition resize-none"
 				/>
+				{/* Champ anti-spam */}
+				<input
+					type="checkbox"
+					name="botcheck"
+					className="hidden"
+					style={{ display: "none" }}
+					tabIndex={-1}
+					autoComplete="off"
+				/>
 				<button
 					type="submit"
-					disabled={loading}
+					disabled={status === "loading"}
 					className="flex items-center justify-center gap-2 bg-accent text-primary font-semibold px-5 py-2 rounded shadow hover:bg-mint transition disabled:opacity-60"
 				>
 					<Send size={18} />
-					{loading ? "Envoi..." : "Envoyer"}
+					{status === "loading" ? "Envoi..." : "Envoyer"}
 				</button>
-				{sent && (
+				{status === "success" && (
 					<div className="text-center text-green-600 dark:text-mint font-semibold mt-2">
 						Merci pour ton message ! Je te répondrai vite 🚀
+					</div>
+				)}
+				{status === "error" && (
+					<div className="text-center text-red-600 dark:text-red-400 font-semibold mt-2">
+						Oups ! Une erreur est survenue. Réessaie ou contacte-moi par email.
 					</div>
 				)}
 			</form>

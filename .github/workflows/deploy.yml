@@ -37,17 +37,17 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Verify build directory  # Nouvelle étape ajoutée
+      - name: Verify build directory
         run: |
           echo "Contenu du dossier :"
           ls -al
           echo "Contenu du build :"
-          ls -al ./dist  # Vite génère dans dist par défaut
+          ls -al ./dist
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist  # Correction ici (build → dist pour Vite)
+          path: ./dist
 
   deploy:
     needs: build

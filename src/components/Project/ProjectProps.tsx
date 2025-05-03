@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Card } from "flowbite-react";
 import { ExternalLink, GitHub } from "react-feather";
 import type { Project } from "../../types/types";
+import { useTranslation } from 'react-i18next';
 
 const stackColors: { [key: string]: string } = {
 	React: "bg-card text-accent hover:bg-mint hover:text-primary",
@@ -20,6 +21,7 @@ const stackColors: { [key: string]: string } = {
 export const ComponentProjetProps: React.FC<{ project: Project }> = ({
 	project,
 }) => {
+	const { t } = useTranslation();
 	const [isHovered, setIsHovered] = useState(false);
 
 	return (
@@ -52,7 +54,7 @@ export const ComponentProjetProps: React.FC<{ project: Project }> = ({
 									target="_blank"
 									rel="noopener noreferrer"
 									className="text-mint hover:text-accent transition-colors"
-									title="Voir la démo"
+									title={t('seeDemo')}
 								>
 									<ExternalLink size={20} />
 								</a>
@@ -62,7 +64,7 @@ export const ComponentProjetProps: React.FC<{ project: Project }> = ({
 								target="_blank"
 								rel="noopener noreferrer"
 								className="text-accent hover:text-mint transition-colors"
-								title="Voir le code source"
+								title={t('seeCode')}
 							>
 								<GitHub size={20} />
 							</a>
@@ -90,11 +92,11 @@ export const ComponentProjetProps: React.FC<{ project: Project }> = ({
 				<div className="mt-auto flex justify-between items-center pt-4">
 					{project.status === "completed" ? (
 						<span className="text-xs font-semibold bg-mint/20 text-mint px-2 py-1 rounded">
-							Projet terminé
+							{t('completedProject')}
 						</span>
 					) : (
 						<span className="text-xs font-semibold bg-accent/20 text-accent px-2 py-1 rounded">
-							En développement
+							{t('inDevelopment')}
 						</span>
 					)}
 					{project.status === "completed" && project.demo ? (
@@ -104,7 +106,7 @@ export const ComponentProjetProps: React.FC<{ project: Project }> = ({
 							rel="noopener noreferrer"
 							className="text-accent hover:text-mint font-semibold transition-colors"
 						>
-							Voir le projet
+							{t('seeProject')}
 						</a>
 					) : (
 						<a
@@ -113,7 +115,7 @@ export const ComponentProjetProps: React.FC<{ project: Project }> = ({
 							rel="noopener noreferrer"
 							className="text-accent hover:text-mint font-semibold transition-colors"
 						>
-							Voir le code
+							{t('seeCode')}
 						</a>
 					)}
 				</div>

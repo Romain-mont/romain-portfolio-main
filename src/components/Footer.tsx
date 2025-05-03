@@ -1,4 +1,8 @@
+import { useTranslation } from 'react-i18next';
+
 export default function ComponentFooter() {
+	const { t } = useTranslation();
+	
 	return (
 		<footer className="bg-card text-text/70 py-6 mt-12 text-center text-sm rounded-t-xl">
 			<div className="flex flex-col sm:flex-row justify-center items-center gap-2">
@@ -25,7 +29,7 @@ export default function ComponentFooter() {
 				</span>
 			</div>
 			<div className="mt-2 text-xs text-text/50">
-				Portfolio réalisé avec React, Tailwind CSS & Flowbite React.
+				{t('madeWith')}
 			</div>
 		</footer>
 	);

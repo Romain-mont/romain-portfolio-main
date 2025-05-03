@@ -1,4 +1,8 @@
+import { useTranslation } from 'react-i18next';
+
 export default function ComponentHeader() {
+	const { t } = useTranslation();
+	
 	return (
 		<section
 			id="header"
@@ -9,14 +13,10 @@ export default function ComponentHeader() {
 				Romain Montagnon
 			</h1>
 			<h2 className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-text">
-				Développeur Web Full Stack
+				{t('jobTitle')}
 			</h2>
 			<p className="text-base sm:text-lg text-gray-700 dark:text-text/80 max-w-md">
-				Après 6 ans d'expérience commerciale et une aventure internationale en
-				Nouvelle-Zélande, je me reconvertis dans le développement web.
-				Actuellement en formation Concepteur Développeur d'Applications chez
-				O'clock, je combine ma perspective business avec mes nouvelles
-				compétences techniques.
+				{t('description')}
 			</p>
 		</section>
 	);

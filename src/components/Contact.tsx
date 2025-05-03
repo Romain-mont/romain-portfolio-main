@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Mail, Linkedin, GitHub, Phone, Send } from "react-feather";
+import { useTranslation } from 'react-i18next';
 
 export default function ComponentContact() {
+	const { t } = useTranslation();
 	const [status, setStatus] = useState<
 		"idle" | "loading" | "success" | "error"
 	>("idle");
@@ -11,14 +13,14 @@ export default function ComponentContact() {
 		e.preventDefault();
 		setStatus("loading");
 
-		const form = e.currentTarget; // référence au formulaire
+		const form = e.currentTarget;
 		const formData = new FormData(form);
 		formData.append("access_key", "c792e664-a926-440b-b89b-2ccffb01d6e4");
 
 		try {
 			const response = await fetch("https://api.web3forms.com/submit", {
 				method: "POST",
-				body: formData, // PAS de headers ici !
+				body: formData,
 			});
 			const data = await response.json();
 			if (data.success) {
@@ -44,11 +46,10 @@ export default function ComponentContact() {
 	return (
 		<section id="contact" className="flex flex-col items-center gap-6 py-8">
 			<h2 className="text-2xl font-title font-bold text-accent mb-2">
-				Contact
+				{t('contactTitle')}
 			</h2>
 			<p className="text-gray-700 dark:text-text/80 text-center max-w-md">
-				Envie d’échanger sur un projet, une collaboration ou simplement discuter
-				tech ? N’hésite pas à me contacter !
+				{t('contactDescription')}
 			</p>
 
 			<form
@@ -58,7 +59,7 @@ export default function ComponentContact() {
 				<input
 					type="text"
 					name="name"
-					placeholder="Nom"
+					placeholder={t('name')}
 					value={form.name}
 					onChange={handleChange}
 					required
@@ -67,7 +68,7 @@ export default function ComponentContact() {
 				<input
 					type="email"
 					name="email"
-					placeholder="Email"
+					placeholder={t('email')}
 					value={form.email}
 					onChange={handleChange}
 					required
@@ -75,7 +76,7 @@ export default function ComponentContact() {
 				/>
 				<textarea
 					name="message"
-					placeholder="Message"
+					placeholder={t('message')}
 					value={form.message}
 					onChange={handleChange}
 					required
@@ -97,16 +98,16 @@ export default function ComponentContact() {
 					className="flex items-center justify-center gap-2 bg-accent text-primary font-semibold px-5 py-2 rounded shadow hover:bg-mint transition disabled:opacity-60"
 				>
 					<Send size={18} />
-					{status === "loading" ? "Envoi..." : "Envoyer"}
+					{status === "loading" ? t('sending') : t('send')}
 				</button>
 				{status === "success" && (
 					<div className="text-center text-green-600 dark:text-mint font-semibold mt-2">
-						Merci pour ton message ! Je te répondrai vite 🚀
+						{t('successMessage')}
 					</div>
 				)}
 				{status === "error" && (
 					<div className="text-center text-red-600 dark:text-red-400 font-semibold mt-2">
-						Oups ! Une erreur est survenue. Réessaie ou contacte-moi par email.
+						{t('errorMessage')}
 					</div>
 				)}
 			</form>

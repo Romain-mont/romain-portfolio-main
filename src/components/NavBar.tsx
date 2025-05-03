@@ -7,8 +7,11 @@ import {
 } from "flowbite-react";
 import { Moon, Sun } from "react-feather";
 import { useState, useEffect } from "react";
+import { useTranslation } from 'react-i18next';
 
 export default function ComponentNavBar() {
+	const { t, i18n } = useTranslation();
+	
 	// Gestion du dark mode
 	const [dark, setDark] = useState(
 		() =>
@@ -27,6 +30,10 @@ export default function ComponentNavBar() {
 			localStorage.setItem("theme", "light");
 		}
 	}, [dark]);
+
+	const changeLanguage = (lng: string) => {
+		i18n.changeLanguage(lng);
+	};
 
 	return (
 		<Navbar
@@ -49,6 +56,12 @@ export default function ComponentNavBar() {
 							<Moon size={22} className="text-mint" />
 						)}
 					</button>
+					<button
+						onClick={() => changeLanguage(i18n.language === 'fr' ? 'en' : 'fr')}
+						className="ml-2 p-1 rounded-full bg-card hover:bg-accent/20 transition"
+					>
+						{i18n.language === 'fr' ? '🇫🇷' : '🇬🇧'}
+					</button>
 				</span>
 			</NavbarBrand>
 			<NavbarToggle />
@@ -57,25 +70,25 @@ export default function ComponentNavBar() {
 					href="#header"
 					className="!text-text/70 dark:!text-text hover:!text-accent dark:hover:!text-mint transition"
 				>
-					À propos
+					{t('about')}
 				</NavbarLink>
 				<NavbarLink
 					href="#education"
 					className="!text-text/70 dark:!text-text hover:!text-accent dark:hover:!text-mint transition"
 				>
-					Éducation
+					{t('education')}
 				</NavbarLink>
 				<NavbarLink
 					href="#projects"
 					className="!text-text/70 dark:!text-text hover:!text-accent dark:hover:!text-mint transition"
 				>
-					Projets
+					{t('projects')}
 				</NavbarLink>
 				<NavbarLink
 					href="#contact"
 					className="!text-text/70 dark:!text-text hover:!text-accent dark:hover:!text-mint transition"
 				>
-					Contact
+					{t('contact')}
 				</NavbarLink>
 			</NavbarCollapse>
 		</Navbar>

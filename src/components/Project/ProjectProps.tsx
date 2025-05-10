@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card } from "flowbite-react";
 import { ExternalLink, GitHub } from "react-feather";
 import type { Project } from "../../types/types";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 const stackColors: { [key: string]: string } = {
 	React: "bg-card text-accent hover:bg-mint hover:text-primary",
@@ -34,11 +34,19 @@ export const ComponentProjetProps: React.FC<{ project: Project }> = ({
 			onMouseLeave={() => setIsHovered(false)}
 		>
 			<div className="aspect-[16/9] w-full overflow-hidden rounded-t-xl bg-primary/30 flex items-center justify-center">
-				<img
-					src={project.image}
-					alt={project.title}
-					className="w-full h-full object-cover object-center"
-				/>
+				<a
+					href={project.status === "completed" && project.demo ? project.demo : project.github}
+					target="_blank"
+					rel="noopener noreferrer"
+					className="w-full h-full cursor-pointer"
+					title={project.status === "completed" ? t("seeDemo") : t("seeCode")}
+				>
+					<img
+						src={project.image}
+						alt={project.title}
+						className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
+					/>
+				</a>
 			</div>
 			{/* Contenu principal */}
 			<div className="flex flex-col flex-1">
@@ -54,7 +62,7 @@ export const ComponentProjetProps: React.FC<{ project: Project }> = ({
 									target="_blank"
 									rel="noopener noreferrer"
 									className="text-mint hover:text-accent transition-colors"
-									title={t('seeDemo')}
+									title={t("seeDemo")}
 								>
 									<ExternalLink size={20} />
 								</a>
@@ -64,7 +72,7 @@ export const ComponentProjetProps: React.FC<{ project: Project }> = ({
 								target="_blank"
 								rel="noopener noreferrer"
 								className="text-accent hover:text-mint transition-colors"
-								title={t('seeCode')}
+								title={t("seeCode")}
 							>
 								<GitHub size={20} />
 							</a>
@@ -88,15 +96,15 @@ export const ComponentProjetProps: React.FC<{ project: Project }> = ({
 						))}
 					</div>
 				</div>
-				{/* Footer TOUJOURS en bas */}
+
 				<div className="mt-auto flex justify-between items-center pt-4">
 					{project.status === "completed" ? (
 						<span className="text-xs font-semibold bg-mint/20 text-mint px-2 py-1 rounded">
-							{t('completedProject')}
+							{t("completedProject")}
 						</span>
 					) : (
 						<span className="text-xs font-semibold bg-accent/20 text-accent px-2 py-1 rounded">
-							{t('inDevelopment')}
+							{t("inDevelopment")}
 						</span>
 					)}
 					{project.status === "completed" && project.demo ? (
@@ -106,7 +114,7 @@ export const ComponentProjetProps: React.FC<{ project: Project }> = ({
 							rel="noopener noreferrer"
 							className="text-accent hover:text-mint font-semibold transition-colors"
 						>
-							{t('seeProject')}
+							{t("seeProject")}
 						</a>
 					) : (
 						<a
@@ -115,7 +123,7 @@ export const ComponentProjetProps: React.FC<{ project: Project }> = ({
 							rel="noopener noreferrer"
 							className="text-accent hover:text-mint font-semibold transition-colors"
 						>
-							{t('seeCode')}
+							{t("seeCode")}
 						</a>
 					)}
 				</div>

@@ -46,7 +46,7 @@ i18n
 					travel: "Voyages (9 mois en Angleterre / 1 an en Nouvelle-Zélande)",
 					languages: "Langues",
 					french: "Français",
-					english: "Anglais (B2)",
+					english: "Anglais (C1)",
 					spanish: "Espagnol (B1)",
 
 					// Projects
@@ -123,7 +123,7 @@ J'ai voulu pratiquer tout ce que j'ai vu au cours de ma formation, en combinant 
 					travel: "Travel (9 months in England / 1 year in New Zealand)",
 					languages: "Languages",
 					french: "French",
-					english: "English (B2)",
+					english: "English (C1)",
 					spanish: "Spanish (B1)",
 
 					// Projects
@@ -144,7 +144,8 @@ J'ai voulu pratiquer tout ce que j'ai vu au cours de ma formation, en combinant 
 - Modern React interface, secure REST API backend.
 - Modern full stack with TypeScript and PostgreSQL.
 I wanted to practice everything I learned during my training, combining front-end, back-end, and database management to create a complete application.`,
-					pokedex:"This project was developed to practice JavaScript, SQL queries, and to have separate front-end and back-end folders.",
+					pokedex:
+						"This project was developed to practice JavaScript, SQL queries, and to have separate front-end and back-end folders.",
 
 					// Contact
 					contactTitle: "Contact",

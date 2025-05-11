@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 const BASE_URL = import.meta.env.BASE_URL;
 const technicalSkills = [
@@ -14,7 +14,7 @@ const technicalSkills = [
 
 export default function ComponentEducation() {
 	const { t } = useTranslation();
-	
+
 	return (
 		<section
 			id="education"
@@ -26,7 +26,7 @@ export default function ComponentEducation() {
 					{/* Formation + Expériences */}
 					<div className="flex flex-col items-center md:items-start gap-2 mb-2">
 						<h2 className="text-2xl font-title font-bold italic text-accent text-center md:text-left">
-							{t('educationTitle')}
+							{t("educationTitle")}
 						</h2>
 					</div>
 					<div className="flex flex-col gap-3 mt-4">
@@ -36,16 +36,16 @@ export default function ComponentEducation() {
 								2025 - Now
 							</span>
 							<span className="text-gray-700 dark:text-text/90 text-base text-center md:text-left">
-								{t('formation')}
+								{t("formation")}
 							</span>
 						</div>
 						{/* Louis Vuitton */}
 						<div className="flex items-center gap-3 justify-center md:justify-start">
 							<span className="border border-accent rounded-md px-3 py-1 text-gray-600 dark:text-text/80 text-sm font-semibold bg-gray-100 dark:bg-transparent">
-								2022 – 2023
+								2023 – 2024
 							</span>
 							<span className="text-gray-800 dark:text-text font-medium text-base">
-								{t('lvExperience')}
+								{t("lvExperience")}
 							</span>
 						</div>
 						{/* Danone */}
@@ -54,7 +54,7 @@ export default function ComponentEducation() {
 								2019 – 2021
 							</span>
 							<span className="text-gray-800 dark:text-text font-medium text-base">
-								{t('danoneExperience')}
+								{t("danoneExperience")}
 							</span>
 						</div>
 					</div>
@@ -62,18 +62,18 @@ export default function ComponentEducation() {
 				{/* Soft skills */}
 				<div className="flex-1">
 					<h3 className="text-xl font-title font-bold italic text-accent mb-2 text-center">
-						{t('softSkills')}
+						{t("softSkills")}
 					</h3>
 					<div className="flex flex-col sm:flex-row gap-2 sm:gap-8 items-center">
 						<ul className="space-y-1 text-gray-700 dark:text-text/80 text-center sm:text-left">
-							<li>{t('teamwork')}</li>
-							<li>{t('communication')}</li>
+							<li>{t("teamwork")}</li>
+							<li>{t("communication")}</li>
 						</ul>
 						{/* biome-ignore lint/style/useSelfClosingElements: <explanation> */}
 						<div className="hidden sm:block border-l border-gray-300 dark:border-card mx-2 h-8"></div>
 						<ul className="space-y-1 text-gray-700 dark:text-text/80 text-center sm:text-left">
-							<li>{t('criticalThinking')}</li>
-							<li>{t('adaptability')}</li>
+							<li>{t("criticalThinking")}</li>
+							<li>{t("adaptability")}</li>
 						</ul>
 					</div>
 				</div>
@@ -84,7 +84,7 @@ export default function ComponentEducation() {
 				{/* Technical skills */}
 				<div className="flex-1">
 					<h3 className="text-xl font-title font-bold italic text-accent mb-3 text-center md:text-left">
-						{t('technicalSkills')}
+						{t("technicalSkills")}
 					</h3>
 					<div className="grid grid-cols-3 gap-4 max-w-xs mx-auto md:mx-0">
 						{technicalSkills.map((skill) => (
@@ -115,32 +115,32 @@ export default function ComponentEducation() {
 				{/* Skill set */}
 				<div className="flex-1">
 					<h3 className="text-xl font-title font-bold italic text-accent mb-2 text-center">
-						{t('skillSet')}
+						{t("skillSet")}
 					</h3>
 
 					<div className="flex flex-col sm:hidden gap-1 items-center">
 						<ul className="space-y-1 text-gray-700 dark:text-text/80 text-center">
-							<li>{t('apiArchitecture')}</li>
-							<li>{t('dockerDeployment')}</li>
-							<li>{t('databaseManagement')}</li>
-							<li>{t('testing')}</li>
-							<li>{t('cicd')}</li>
-							<li>{t('responsiveDesign')}</li>
+							<li>{t("apiArchitecture")}</li>
+							<li>{t("dockerDeployment")}</li>
+							<li>{t("databaseManagement")}</li>
+							<li>{t("testing")}</li>
+							<li>{t("cicd")}</li>
+							<li>{t("responsiveDesign")}</li>
 						</ul>
 					</div>
 
 					<div className="hidden sm:flex flex-row gap-8 items-center">
 						<ul className="space-y-1 text-gray-700 dark:text-text/80 text-left">
-							<li>{t('apiArchitecture')}</li>
-							<li>{t('dockerDeployment')}</li>
-							<li>{t('databaseManagement')}</li>
+							<li>{t("apiArchitecture")}</li>
+							<li>{t("dockerDeployment")}</li>
+							<li>{t("databaseManagement")}</li>
 						</ul>
 						{/* biome-ignore lint/style/useSelfClosingElements: <explanation> */}
 						<div className="border-l border-gray-300 dark:border-card mx-2 h-12"></div>
 						<ul className="space-y-1 text-gray-700 dark:text-text/80 text-left">
-							<li>{t('testing')}</li>
-							<li>{t('cicd')}</li>
-							<li>{t('responsiveDesign')}</li>
+							<li>{t("testing")}</li>
+							<li>{t("cicd")}</li>
+							<li>{t("responsiveDesign")}</li>
 						</ul>
 					</div>
 				</div>
@@ -151,27 +151,25 @@ export default function ComponentEducation() {
 				{/* Interests */}
 				<div className="flex-1">
 					<h3 className="text-xl font-title font-bold italic text-accent mb-2 text-center">
-						{t('interests')}
+						{t("interests")}
 					</h3>
 					<div className="flex flex-col sm:flex-row gap-2 sm:gap-6 text-gray-700 dark:text-text/80 items-center justify-center">
-						<span className="text-center">{t('sports')}</span>
+						<span className="text-center">{t("sports")}</span>
 						<span className="hidden sm:inline">|</span>
-						<span className="text-center max-w-xs mx-auto">
-							{t('travel')}
-						</span>
+						<span className="text-center max-w-xs mx-auto">{t("travel")}</span>
 					</div>
 				</div>
 				{/* Languages */}
 				<div className="flex-1">
 					<h3 className="text-xl font-title font-bold italic text-accent mb-2 text-center">
-						{t('languages')}
+						{t("languages")}
 					</h3>
 					<div className="flex flex-col sm:flex-row gap-2 sm:gap-6 text-gray-700 dark:text-text/80 items-center justify-center">
-						<span>{t('french')}</span>
+						<span>{t("french")}</span>
 						<span className="hidden sm:inline">|</span>
-						<span>{t('english')}</span>
+						<span>{t("english")}</span>
 						<span className="hidden sm:inline">|</span>
-						<span>{t('spanish')}</span>
+						<span>{t("spanish")}</span>
 					</div>
 				</div>
 			</div>

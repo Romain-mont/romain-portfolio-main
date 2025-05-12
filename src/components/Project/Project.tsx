@@ -10,6 +10,23 @@ export default function ComponentProject() {
 
 	const projects: Project[] = [
 		{
+			id: "Pokedex",
+			title: "Pokedex",
+			description: t("pokedex"),
+			stack: [
+				"Javascript",
+				"Html",
+				"Node.js",
+				"Express",
+				"PostgreSQL",
+				"API REST",
+			],
+			github : "https://github.com/Romain-mont/Pokedex",
+			site: "https://romain-mont.github.io/Pokedex/",
+			image: `${BASE_URL}projets/Pokedex.png`,
+			status: "completed",
+		},
+		{
 			id: "harry-potter",
 			title: "Harry Potter",
 			description: t("harryPotterDesc"),
@@ -42,22 +59,6 @@ export default function ComponentProject() {
 			github: "https://github.com/Romain-mont/Projet-salle-de-sport",
 			image: `${BASE_URL}projets/FitStack.png`,
 			status: "in-progress",
-		},
-		{
-			id: "Pokedex",
-			title: "Pokedex",
-			description: t("pokedex"),
-			stack: [
-				"Javascript",
-				"Html",
-				"Node.js",
-				"Express",
-				"PostgreSQL",
-				"API REST",
-			],
-			github: "https://romain-mont.github.io/Pokedex/",
-			image: `${BASE_URL}projets/Pokedex.png`,
-			status: "completed",
 		},
 	];
 

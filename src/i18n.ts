@@ -51,24 +51,19 @@ i18n
 
 					// Projects
 					projectsTitle: "Projets",
-					seeDemo: "Voir la démo",
+					seeDemo: "Voir le site",
 					seeCodeSource: "Voir le code source",
 					completedProject: "Projet terminé",
 					inDevelopment: "En développement",
-					seeProject: "Voir le projet",
+					seeProject: "Voir le site",
 					seeCode: "Voir le code",
 					harryPotterDesc:
-						"Ce projet a été développé pour pratiquer les API REST, l'authentification et React.",
+						"Application web immersive développée pour explorer l’univers Harry Potter tout en pratiquant la consommation d’API REST, la gestion de l’authentification et la création d’interfaces dynamiques avec React. Ce projet met en avant l’intégration de données externes, la sécurisation des accès et la conception d’une expérience utilisateur ludique et interactive.",
 					seniorLoveDesc:
-						"Senior Love, une plateforme de rencontres en ligne combinée à des événements locaux. Ce projet s'adresse aux retraités actifs de plus de 60 ans en quête de nouvelles rencontres et de moments de partage.",
-					fitstackDesc: `Plateforme complète pour la gestion d'une salle de sport :
-- Gestion des utilisateurs (visiteurs, abonnés, professeurs, administrateurs) selon leur rôle.
-- Abonnements, réservations de cours, gestion de planning.
-- Interface moderne en React, backend API REST sécurisé.
-- Stack full stack moderne avec TypeScript et PostgreSQL.
-J'ai voulu pratiquer tout ce que j'ai vu au cours de ma formation, en combinant front-end, back-end, et gestion de base de données pour créer une application complète.`,
+						"Senior Love est une plateforme de rencontres en ligne enrichie par l’organisation d’événements locaux. Pensée pour les retraités actifs de plus de 60 ans, elle favorise les échanges et les moments de partage. Ce projet met en œuvre une gestion avancée des profils, des événements et une interface conviviale pour répondre aux besoins d’une communauté dynamique.",
+					fitstackDesc: `FitStack est une solution complète pour la gestion d’une salle de sport, intégrant la gestion des utilisateurs selon leur rôle, des abonnements, des réservations et du planning des cours. L’application repose sur une architecture full stack moderne (React, TypeScript, PostgreSQL) et propose une interface intuitive, sécurisée et adaptée à tous les profils, du visiteur à l’administrateur.`,
 					pokedex:
-						"Ce projet a été développé pour pratiquer javascript, les requêtes sql, et avoir un dossier front et back séparé",
+						"Ce Pokédex interactif a été conçu pour s’initier à JavaScript, aux requêtes SQL et à l’architecture front/back séparée. Il permet de rechercher, filtrer et consulter les fiches Pokémon via une interface moderne, tout en mettant en pratique la gestion de bases de données et la communication entre un backend et un frontend indépendants.",
 					// Contact
 					contactTitle: "Contact",
 					contactDescription:
@@ -128,24 +123,19 @@ J'ai voulu pratiquer tout ce que j'ai vu au cours de ma formation, en combinant 
 
 					// Projects
 					projectsTitle: "Projects",
-					seeDemo: "See demo",
+					seeDemo: "View site",
 					seeCodeSource: "View source code",
 					completedProject: "Project completed",
 					inDevelopment: "In development",
-					seeProject: "View project",
+					seeProject: "View site",
 					seeCode: "View code",
 					harryPotterDesc:
-						"This project was developed to practice REST APIs, authentication, and React.",
+						"An immersive web app designed to explore the Harry Potter universe while practicing REST API integration, authentication management, and dynamic interfaces with React. This project highlights external data integration, secure access, and the creation of a playful, interactive user experience.",
 					seniorLoveDesc:
-						"Senior Love, an online dating platform combined with local events. This project targets active retirees over 60 looking for new connections and shared moments.",
-					fitstackDesc: `Complete platform for gym management:
-- User management (visitors, members, instructors, administrators) based on roles.
-- Memberships, class bookings, schedule management.
-- Modern React interface, secure REST API backend.
-- Modern full stack with TypeScript and PostgreSQL.
-I wanted to practice everything I learned during my training, combining front-end, back-end, and database management to create a complete application.`,
+						"Senior Love is an online dating platform enhanced with local event organization. Designed for active retirees over 60, it encourages connections and shared experiences. This project features advanced profile and event management, with a user-friendly interface tailored for a vibrant community.",
+					fitstackDesc: `FitStack is a comprehensive solution for gym management, including user roles, subscriptions, class bookings, and scheduling. Built with a modern full stack (React, TypeScript, PostgreSQL), it offers an intuitive, secure interface tailored for all users, from visitors to administrators.`,
 					pokedex:
-						"This project was developed to practice JavaScript, SQL queries, and to have separate front-end and back-end folders.",
+						"This interactive Pokédex was created to practice JavaScript, SQL queries, and a separated front/back architecture. It allows users to search, filter, and view Pokémon profiles through a modern interface, while applying database management and communication between independent backend and frontend.",
 
 					// Contact
 					contactTitle: "Contact",

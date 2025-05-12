@@ -6,6 +6,7 @@ export interface Project {
 	description: string;
 	stack: string[];
 	github: string;
+	site?: string;
 	demo?: string;
 	image?: string;
 	status: ProjectStatus;

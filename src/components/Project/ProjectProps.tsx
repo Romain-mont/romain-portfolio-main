@@ -35,11 +35,11 @@ export const ComponentProjetProps: React.FC<{ project: Project }> = ({
 		>
 			<div className="aspect-[16/9] w-full overflow-hidden rounded-t-xl bg-primary/30 flex items-center justify-center">
 				<a
-					href={project.status === "completed" && project.demo ? project.demo : project.github}
+					href={project.status === "completed" && project.site ? project.site : project.github}
 					target="_blank"
 					rel="noopener noreferrer"
 					className="w-full h-full cursor-pointer"
-					title={project.status === "completed" ? t("seeDemo") : t("seeCode")}
+					title={project.status === "completed" && project.site ? t("seeDemo") : t("seeCode")}
 				>
 					<img
 						src={project.image}
@@ -107,9 +107,9 @@ export const ComponentProjetProps: React.FC<{ project: Project }> = ({
 							{t("inDevelopment")}
 						</span>
 					)}
-					{project.status === "completed" && project.demo ? (
+					{project.status === "completed" && project.site ? (
 						<a
-							href={project.demo}
+							href={project.site}
 							target="_blank"
 							rel="noopener noreferrer"
 							className="text-accent hover:text-mint font-semibold transition-colors"

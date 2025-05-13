@@ -6,16 +6,16 @@ export default function ComponentHeader() {
 	return (
 		<section
 			id="header"
-			className="flex flex-col items-center justify-center text-center gap-4 mt-8 px-4"
+			className="flex flex-col items-center justify-center gap-4 mt-8 px-4"
 		>
 			{/* <img src="/path/to/avatar.jpg" alt="Romain Montagnon" className="w-24 h-24 rounded-full border-4 border-accent shadow-lg mb-2" /> */}
-			<h1 className="text-3xl sm:text-4xl font-title font-bold text-accent dark:text-accent">
+			<h1 className="text-3xl sm:text-4xl font-title font-bold text-accent dark:text-accent text-left w-full max-w-md">
 				Romain Montagnon
 			</h1>
-			<h2 className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-text">
+			<h2 className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-text text-left w-full max-w-md">
 				{t('jobTitle')}
 			</h2>
-			<p className="text-base sm:text-lg text-gray-700 dark:text-text/80 max-w-md">
+			<p className="text-base sm:text-lg text-gray-800 dark:text-text/90 max-w-md leading-relaxed font-medium text-left">
 				{t('description')}
 			</p>
 		</section>

@@ -33,6 +33,10 @@ i18n
 					communication: "Communication",
 					criticalThinking: "Esprit critique",
 					adaptability: "Capacité d'adaptation",
+					problemSolving: "Résolution de problèmes",
+					timeManagement: "Gestion du temps",
+					leadership: "Leadership",
+					creativity: "Créativité",
 					technicalSkills: "Compétences techniques",
 					skillSet: "Skill set",
 					apiArchitecture: "Architecture API REST",
@@ -58,12 +62,12 @@ i18n
 					seeProject: "Voir le site",
 					seeCode: "Voir le code",
 					harryPotterDesc:
-						"Application web immersive développée pour explorer l’univers Harry Potter tout en pratiquant la consommation d’API REST, la gestion de l’authentification et la création d’interfaces dynamiques avec React. Ce projet met en avant l’intégration de données externes, la sécurisation des accès et la conception d’une expérience utilisateur ludique et interactive.",
+						"Application web immersive développée pour explorer l'univers Harry Potter tout en pratiquant la consommation d'API REST, la gestion de l'authentification et la création d'interfaces dynamiques avec React. Ce projet met en avant l'intégration de données externes, la sécurisation des accès et la conception d'une expérience utilisateur ludique et interactive.",
 					seniorLoveDesc:
-						"Senior Love est une plateforme de rencontres en ligne enrichie par l’organisation d’événements locaux. Pensée pour les retraités actifs de plus de 60 ans, elle favorise les échanges et les moments de partage. Ce projet met en œuvre une gestion avancée des profils, des événements et une interface conviviale pour répondre aux besoins d’une communauté dynamique.",
-					fitstackDesc: `FitStack est une solution complète pour la gestion d’une salle de sport, intégrant la gestion des utilisateurs selon leur rôle, des abonnements, des réservations et du planning des cours. L’application repose sur une architecture full stack moderne (React, TypeScript, PostgreSQL) et propose une interface intuitive, sécurisée et adaptée à tous les profils, du visiteur à l’administrateur.`,
+						"Senior Love est une plateforme de rencontres en ligne enrichie par l'organisation d'événements locaux. Pensée pour les retraités actifs de plus de 60 ans, elle favorise les échanges et les moments de partage. Ce projet met en œuvre une gestion avancée des profils, des événements et une interface conviviale pour répondre aux besoins d'une communauté dynamique.",
+					fitstackDesc: `FitStack est une solution complète pour la gestion d'une salle de sport, intégrant la gestion des utilisateurs selon leur rôle, des abonnements, des réservations et du planning des cours. L'application repose sur une architecture full stack moderne (React, TypeScript, PostgreSQL) et propose une interface intuitive, sécurisée et adaptée à tous les profils, du visiteur à l'administrateur.`,
 					pokedex:
-						"Ce Pokédex interactif a été conçu pour s’initier à JavaScript, aux requêtes SQL et à l’architecture front/back séparée. Il permet de rechercher, filtrer et consulter les fiches Pokémon via une interface moderne, tout en mettant en pratique la gestion de bases de données et la communication entre un backend et un frontend indépendants.",
+						"Ce Pokédex interactif a été conçu pour s'initier à JavaScript, aux requêtes SQL et à l'architecture front/back séparée. Il permet de rechercher, filtrer et consulter les fiches Pokémon via une interface moderne, tout en mettant en pratique la gestion de bases de données et la communication entre un backend et un frontend indépendants.",
 					// Contact
 					contactTitle: "Contact",
 					contactDescription:
@@ -105,6 +109,10 @@ i18n
 					communication: "Communication",
 					criticalThinking: "Critical thinking",
 					adaptability: "Adaptability",
+					problemSolving: "Problem solving",
+					timeManagement: "Time management",
+					leadership: "Leadership",
+					creativity: "Creativity",
 					technicalSkills: "Technical skills",
 					skillSet: "Skill set",
 					apiArchitecture: "REST API Architecture",

@@ -27,41 +27,42 @@ export const ComponentProjetProps: React.FC<{ project: Project }> = ({
 	return (
 		<Card
 			className={`
-        w-full max-w-sm mx-auto bg-card border-none shadow-lg flex flex-col h-full transition-all duration-300
-        ${isHovered ? "transform -translate-y-2 shadow-xl" : ""}
+        w-full max-w-sm mx-auto bg-white dark:bg-card border-none shadow-card hover:shadow-card-hover
+        flex flex-col h-full transition-all duration-300
+        ${isHovered ? "transform -translate-y-2" : ""}
       `}
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
 		>
-			<div className="aspect-[16/9] w-full overflow-hidden rounded-t-xl bg-primary/30 flex items-center justify-center">
+			<div className="aspect-[16/9] w-full overflow-hidden rounded-t-xl bg-gray-100 dark:bg-primary-light flex items-center justify-center">
 				<a
 					href={project.status === "completed" && project.site ? project.site : project.github}
 					target="_blank"
 					rel="noopener noreferrer"
-					className="w-full h-full cursor-pointer"
+					className="w-full h-full cursor-pointer group"
 					title={project.status === "completed" && project.site ? t("seeDemo") : t("seeCode")}
 				>
 					<img
 						src={project.image}
 						alt={project.title}
-						className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
+						className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105 dark:brightness-100 brightness-90"
 					/>
 				</a>
 			</div>
 			{/* Contenu principal */}
-			<div className="flex flex-col flex-1">
+			<div className="flex flex-col flex-1 p-6">
 				<div>
-					<div className="flex items-center justify-between mb-2">
-						<h3 className="text-xl font-title font-bold text-accent">
+					<div className="flex items-center justify-between mb-4">
+						<h3 className="text-xl font-title font-bold text-accent dark:text-accent-light">
 							{project.title}
 						</h3>
-						<div className="flex gap-2">
-							{project.status === "completed" && project.demo && (
+						<div className="flex gap-3">
+							{project.status === "completed" && project.site && (
 								<a
-									href={project.demo}
+									href={project.site}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="text-mint hover:text-accent transition-colors"
+									className="text-mint hover:text-mint-light transition-colors"
 									title={t("seeDemo")}
 								>
 									<ExternalLink size={20} />
@@ -71,24 +72,24 @@ export const ComponentProjetProps: React.FC<{ project: Project }> = ({
 								href={project.github}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="text-accent hover:text-mint transition-colors"
+								className="text-accent hover:text-accent-light dark:text-accent-light dark:hover:text-accent transition-colors"
 								title={t("seeCode")}
 							>
 								<GitHub size={20} />
 							</a>
 						</div>
 					</div>
-					<p className="text-text/80 whitespace-pre-line break-words">
+					<p className="text-gray-700 dark:text-text-light whitespace-pre-line break-words mb-4 leading-relaxed text-base">
 						{project.description}
 					</p>
-					<div className="flex flex-wrap gap-2 mt-2">
+					<div className="flex flex-wrap gap-2">
 						{project.stack.map((tech) => (
 							<span
 								key={tech}
 								className={`
                   px-3 py-1 rounded text-xs font-semibold transition
-                  ${stackColors[tech] || "bg-accent text-primary"}
-                  hover:bg-mint hover:text-primary
+                  ${stackColors[tech] || "bg-accent/10 text-accent dark:bg-accent/20 dark:text-accent-light"}
+                  hover:bg-mint/20 hover:text-primary dark:hover:bg-accent/30 dark:hover:text-mint
                 `}
 							>
 								{tech}
@@ -97,13 +98,13 @@ export const ComponentProjetProps: React.FC<{ project: Project }> = ({
 					</div>
 				</div>
 
-				<div className="mt-auto flex justify-between items-center pt-4">
+				<div className="mt-auto flex justify-between items-center pt-6">
 					{project.status === "completed" ? (
-						<span className="text-xs font-semibold bg-mint/20 text-mint px-2 py-1 rounded">
+						<span className="text-xs font-semibold bg-mint/20 text-mint px-3 py-1.5 rounded-full">
 							{t("completedProject")}
 						</span>
 					) : (
-						<span className="text-xs font-semibold bg-accent/20 text-accent px-2 py-1 rounded">
+						<span className="text-xs font-semibold bg-accent/20 text-accent dark:text-accent-light px-3 py-1.5 rounded-full">
 							{t("inDevelopment")}
 						</span>
 					)}
@@ -112,7 +113,7 @@ export const ComponentProjetProps: React.FC<{ project: Project }> = ({
 							href={project.site}
 							target="_blank"
 							rel="noopener noreferrer"
-							className="text-accent hover:text-mint font-semibold transition-colors"
+							className="text-accent hover:text-accent-light dark:text-accent-light dark:hover:text-mint font-semibold transition-colors"
 						>
 							{t("seeProject")}
 						</a>
@@ -121,7 +122,7 @@ export const ComponentProjetProps: React.FC<{ project: Project }> = ({
 							href={project.github}
 							target="_blank"
 							rel="noopener noreferrer"
-							className="text-accent hover:text-mint font-semibold transition-colors"
+							className="text-accent hover:text-accent-light dark:text-accent-light dark:hover:text-mint font-semibold transition-colors"
 						>
 							{t("seeCode")}
 						</a>
